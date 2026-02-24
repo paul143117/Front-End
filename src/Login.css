@@ -1,148 +1,127 @@
-/* Container and Background */
-.login-page {
-  min-height: 100vh;
+/* ===== FULL PAGE WRAPPER ===== */
+
+.login-wrapper {
+  height: 100vh;
+  background: linear-gradient(135deg, #c98c8c, #a76a6a);
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #d4a3a3 0%, #b07d7d 50%, #8e5a5a 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
 }
 
-/* The Glassmorphism Card */
+/* ===== LOGIN CARD ===== */
+
 .login-card {
-  display: flex;
-  flex-direction: row;
   width: 900px;
   max-width: 95%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
+  height: 550px;
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  padding: 20px;
+  backdrop-filter: blur(20px);
+  display: flex;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  padding: 40px;
 }
 
-/* Image Section */
-.image-container {
+/* ===== LEFT SIDE ===== */
+
+.login-left {
   flex: 1;
   display: flex;
-  padding: 10px;
+  align-items: flex-start;
 }
 
-.inner-image-wrapper {
-  width: 100%;
-  height: 500px;
-  border-radius: 30px;
-  overflow: hidden;
+.logo-text {
+  color: white;
+  font-weight: 500;
 }
 
-.inner-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* ===== RIGHT SIDE ===== */
 
-/* Form Section */
-.form-container {
+.login-right {
   flex: 1;
-  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 40px;
 }
 
-.form-title {
-  color: #633a3a;
-  font-size: 2.5rem;
-  text-align: center;
+.login-right h1 {
+  font-size: 42px;
   margin-bottom: 40px;
+  color: #5a2f2f;
 }
+
+/* ===== INPUTS ===== */
 
 .input-group {
   margin-bottom: 30px;
-  border-bottom: 1px solid rgba(99, 58, 58, 0.4);
 }
 
 .input-group label {
   display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #633a3a;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #5a2f2f;
 }
 
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 8px;
-}
-
-.input-wrapper input {
-  background: transparent;
-  border: none;
-  outline: none;
+.input-group input {
   width: 100%;
-  color: #4a2c2c;
-  font-size: 1rem;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 2px solid #d9a6a6;
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+  color: #5a2f2f;
 }
 
-.icon {
-  color: #5a3333;
-  margin-left: 10px;
-  transition: opacity 0.2s;
-}
-.icon:hover {
-  opacity: 0.7;
+.input-group input::placeholder {
+  color: #a57474;
 }
 
-/* Login Button */
+/* ===== BUTTON ===== */
+
 .login-btn {
-  width: 200px;
-  margin: 20px auto 0;
-  display: block;
+  margin-top: 20px;
   padding: 12px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: linear-gradient(to right, #d4a3a3, #b07d7d);
-  color: #633a3a;
-  font-weight: bold;
-  font-size: 1.1rem;
+  border-radius: 30px;
+  border: none;
+  background: #e4b2b2;
+  color: #5a2f2f;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 20px -3px rgba(0, 0, 0, 0.15);
+  background: #d89c9c;
 }
 
-/* Links */
-.form-footer {
+/* ===== LINKS ===== */
+
+.login-links {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
-  font-size: 0.85rem;
+  font-size: 14px;
+  color: #5a2f2f;
+  cursor: pointer;
 }
 
-.form-footer a {
-  color: #633a3a;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.form-footer a:hover {
+.login-links span:hover {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   .login-card {
     flex-direction: column;
+    height: auto;
   }
-  .inner-image-wrapper {
-    height: 250px;
+
+  .login-left {
+    display: none;
   }
 }
