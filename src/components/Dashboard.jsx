@@ -1,28 +1,22 @@
-import "./Dashboard.css";
-import "./ProgramList.css";
-import "./SubjectList.css";
-
-const Dashboard = ({ programs, subjects, goTo }) => {
+function Dashboard({ programs, subjects }) {
   const totalPrograms = programs.length;
   const totalSubjects = subjects.length;
-  const activePrograms = programs.filter(p => p.status === "Active").length;
-  const subjectsWithPrereq = subjects.filter(
-    s => s.prerequisites.length > 0
-  ).length;
+  const activePrograms = programs.filter(p => p.status === "active").length;
+  const inactivePrograms = programs.length - activePrograms;
+  const subjectsWithPrereq = subjects.filter(s => s.prerequisites.length > 0).length;
 
   return (
-    <div style={{ padding: 40 }}>
+    <>
       <h1>Dashboard</h1>
-
-      <p>Total Programs: {totalPrograms}</p>
-      <p>Total Subjects: {totalSubjects}</p>
-      <p>Active Programs: {activePrograms}</p>
-      <p>Subjects with Pre-requisites: {subjectsWithPrereq}</p>
-
-      <button onClick={() => goTo("programs")}>Programs</button>
-      <button onClick={() => goTo("subjects")}>Subjects</button>
-    </div>
+      <div className="grid">
+        <div className="card">Total Programs: {totalPrograms}</div>
+        <div className="card">Total Subjects: {totalSubjects}</div>
+        <div className="card">Active Programs: {activePrograms}</div>
+        <div className="card">Inactive Programs: {inactivePrograms}</div>
+        <div className="card">Subjects with Pre-req: {subjectsWithPrereq}</div>
+      </div>
+    </>
   );
-};
+}
 
 export default Dashboard;

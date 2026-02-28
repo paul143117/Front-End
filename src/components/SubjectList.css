@@ -57,3 +57,12 @@
   font-weight: 600;
   cursor: pointer;
 }
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.badge.semester { background: #a76a6a; color: white; }
+.badge.term { background: #c98c8c; color: white; }
+.badge.both { background: #8c4f4f; color: white; }

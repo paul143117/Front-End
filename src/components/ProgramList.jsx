@@ -1,33 +1,23 @@
-import { useState } from "react";
-import ProgramCard from "./ProgramCard";
-import ProgramDetails from "./ProgramDetails";
-
-const ProgramList = ({ programs, subjects, goTo }) => {
-  const [selected, setSelected] = useState(null);
-
-  if (selected)
-    return (
-      <ProgramDetails
-        program={selected}
-        subjects={subjects}
-        goBack={() => setSelected(null)}
-      />
-    );
-
+function ProgramList({ programs, onSelect }) {
   return (
-    <div style={{ padding: 40 }}>
-      <h1>Programs</h1>
-      <button onClick={() => goTo("dashboard")}>Back</button>
-
-      {programs.map(program => (
-        <ProgramCard
-          key={program.id}
-          program={program}
-          onClick={() => setSelected(program)}
-        />
-      ))}
-    </div>
+    <>
+      <h1>Program Offerings</h1>
+      <div className="grid">
+        {programs.map(program => (
+          <div
+            key={program.code}
+            className="card clickable"
+            onClick={() => onSelect(program)}
+          >
+            <h3>{program.code.toUpperCase()}</h3>
+            <p>{program.name}</p>
+            <p>{program.duration}</p>
+            <p>Status: {program.status}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
-};
+}
 
 export default ProgramList;

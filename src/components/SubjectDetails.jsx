@@ -1,25 +1,27 @@
-const SubjectDetails = ({ subject, goBack }) => {
+function SubjectDetails({ subject }) {
   return (
-    <div style={{ padding: 40 }}>
-      <button onClick={goBack}>Back</button>
-      <h2>{subject.code} - {subject.title}</h2>
+    <>
+      <h2>{subject.code.toUpperCase()} - {subject.title}</h2>
       <p>Units: {subject.units}</p>
-      <p>Semester: {subject.semester}</p>
+      <p>Program: {subject.programCode}</p>
+      <p>Term: {subject.termType}</p>
+
       <p>
-        Pre-requisites:{" "}
+        Pre-requisites:
         {subject.prerequisites.length > 0
           ? subject.prerequisites.join(", ")
-          : "None"}
+          : " none"}
       </p>
+
       <p>
-        Co-requisites:{" "}
+        Co-requisites:
         {subject.corequisites.length > 0
           ? subject.corequisites.join(", ")
-          : "None"}
+          : " none"}
       </p>
-      <p>{subject.description}</p>
-    </div>
-  );
-};
 
+      <p>{subject.description}</p>
+    </>
+  );
+}
 export default SubjectDetails;

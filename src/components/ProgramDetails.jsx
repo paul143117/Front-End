@@ -1,26 +1,26 @@
-import "./ProgramList.css";
+function ProgramDetails({ program, subjects }) {
+  const relatedSubjects = subjects.filter(
+    s => s.programCode === program.code
+  );
 
-const ProgramDetails = ({ program, goBack }) => {
   return (
-    <div style={{ padding: 40 }}>
-      <button onClick={goBack}>Back</button>
-      <h2>{program.code}</h2>
+    <>
+      <h1>{program.name}</h1>
       <p>{program.description}</p>
       <p>Duration: {program.duration}</p>
       <p>Total Units: {program.totalUnits}</p>
 
-      {Object.entries(program.yearLevels).map(([year, subjects]) => (
-        <div key={year}>
-          <h4>{year}</h4>
-          <ul>
-            {subjects.map(s => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
+      <h2>Subjects</h2>
+      <div className="grid">
+        {relatedSubjects.map(subject => (
+          <div key={subject.code} className="card">
+            <h4>{subject.code}</h4>
+            <p>{subject.title}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
-};
+}
 
 export default ProgramDetails;
