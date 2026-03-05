@@ -16,6 +16,7 @@ function App() {
     setSelectedProgram(null);
   };
 
+  // LOGIN PAGE
   if (page === "login") {
     return <Login onLogin={() => setPage("dashboard")} />;
   }
@@ -23,10 +24,13 @@ function App() {
   return (
     <Layout goTo={setPage} onLogout={handleLogout}>
       {(search) => {
-        if (page === "dashboard")
+        // DASHBOARD
+        if (page === "dashboard") {
           return <Dashboard programs={programs} subjects={subjects} />;
+        }
 
-        if (page === "programs")
+        // PROGRAM LIST
+        if (page === "programs") {
           return (
             <ProgramList
               programs={programs}
@@ -36,16 +40,16 @@ function App() {
               }}
             />
           );
+        }
 
+        // SUBJECT LIST
         if (page === "subjects") {
           const filteredSubjects = subjects
             .filter((s) =>
-              selectedProgram
-                ? s.program === selectedProgram
-                : true
+              selectedProgram ? s.program === selectedProgram : true
             )
             .filter((s) =>
-              (s.name || "")
+              (s.title || "")
                 .toLowerCase()
                 .includes(search.toLowerCase())
             );
@@ -57,6 +61,8 @@ function App() {
             />
           );
         }
+
+        return null;
       }}
     </Layout>
   );
