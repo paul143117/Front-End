@@ -1,26 +1,36 @@
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 30px;
-  overflow: hidden;
-  margin-top: 20px;
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  color: white;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
 }
 
-.table th {
-  padding: 15px;
-  text-align: left;
-  background: rgba(255,255,255,0.15);
+.card {
+  background: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 260px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
 }
 
-.table td {
-  padding: 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+.card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+  transform: translateY(-2px);
 }
 
-.table tr:hover {
-  background: rgba(255,255,255,0.1);
+.card h3 {
+  color: #e57373;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card p {
+  color: #333333;
+  font-size: 14px;
+  margin: 2px 0;
 }
