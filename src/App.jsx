@@ -6,7 +6,6 @@ import ProgramList from "./components/ProgramList";
 import SubjectList from "./components/SubjectList";
 import Announcements from "./components/Announcements";
 import ClassSchedule from "./components/ClassSchedule";
-import OnlineDatabases from "./components/OnlineDatabases";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 import WeatherPage from "./components/weather/WeatherPage";
 import SubjectDetail from "./components/SubjectDetail";
@@ -150,10 +149,6 @@ function App() {
 
             if (page === "schedule") {
               return <ClassSchedule user={user} subjects={subjects} />;
-            }
-
-            if (page === "databases") {
-              return <OnlineDatabases />;
             }
 
             if (page === "weather") {

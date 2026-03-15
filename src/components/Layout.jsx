@@ -50,13 +50,6 @@ function Layout({ children, goTo, onLogout, currentPage, userName }) {
               My Schedule
             </button>
             <button
-              className={`sidebar-link ${currentPage === "databases" ? "active" : ""}`}
-              type="button"
-              onClick={() => goTo("databases")}
-            >
-              Online Databases
-            </button>
-            <button
               className={`sidebar-link ${currentPage === "weather" ? "active" : ""}`}
               type="button"
               onClick={() => goTo("weather")}

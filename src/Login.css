@@ -98,6 +98,22 @@
   background: #d89c9c;
 }
 
+/* ===== ERROR / SUCCESS ===== */
+
+.login-error {
+  margin-top: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #8b3a3a;
+}
+
+.login-success {
+  margin-top: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #2d5a2d;
+}
+
 /* ===== LINKS ===== */
 
 .login-links {

@@ -122,11 +122,11 @@ function Dashboard({ user }) {
       </header>
 
       <section className="alert-strip">
-        <span>For Students</span>
+        <span>FOR STUDENTS</span>
         <strong>Data Privacy Policy</strong>
       </section>
       <section className="alert-strip secondary">
-        <span>For Students</span>
+        <span>FOR STUDENTS</span>
         <strong>Online Classroom Learning Environment Survey</strong>
       </section>
 
@@ -148,8 +148,8 @@ function Dashboard({ user }) {
         </div>
         <div className="stat-card">
           <h4>Status</h4>
-          <p className="stat-value">OK</p>
-          <span className="stat-sub">Connected</span>
+          <p className="stat-value">GOOD</p>
+          <span className="stat-sub">In good standing</span>
         </div>
       </section>
 
